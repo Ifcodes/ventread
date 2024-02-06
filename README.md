@@ -1,3 +1,7 @@
+# Project Description
+
+This is a social journalism platform but with additional emphasis on how-to content. Here users will share guides on how to do anything but more so have other options of making blog posts. 
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

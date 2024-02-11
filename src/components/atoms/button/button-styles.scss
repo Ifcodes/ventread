@@ -1,0 +1,8 @@
+.primary-button {
+  @apply bg-primary py-3 px-4 font-medium border-none outline-none rounded-lg text-text;
+}
+
+.secondary-button{
+  @extend .primary-button;
+  @apply bg-transparent border border-solid border-primary;
+}

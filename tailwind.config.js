@@ -8,8 +8,10 @@ export default {
 
     extend: {
       colors: {
-        "body-bg": "F6F4F4",
-        "text": "3E3939",
+        primary: "#D68F2B",
+        "body-bg": "#F6F4F4",
+        "text": "#3E3939",
+        "dark-mode-bg": "#242424",
       }
     },
   },

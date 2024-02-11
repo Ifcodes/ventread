@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/logo.svg'
 import './App.scss'
+import Button from './components/atoms/button'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -51,7 +52,7 @@ function App() {
         <p className=" text-red-600">
           Click on the Vite and React logos to learn more
         </p>
-
+        <Button></Button>
       </section>
       <section ref={nextRef} id='next' className='h-screen w-screen bg-red-400'>
         <a>

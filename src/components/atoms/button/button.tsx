@@ -1,7 +1,14 @@
-import React from 'react'
+import { DetailedHTMLProps, ReactNode } from "react"
+import './button-styles.scss'
+import clsx from "clsx";
 
-export const Button = () => {
+interface IButtonTypes extends DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  buttonType: "primary" | "secondary" | "other";
+  children: ReactNode | string;
+}
+
+export const Button = ({buttonType, children, ...props}: IButtonTypes) => {
   return (
-    <button>Button</button>
+    <button className={clsx(buttonType === "primary" && 'primary-button', buttonType === 'secondary' && 'secondary-button')} {...props}>{children}</button>
   )
 }

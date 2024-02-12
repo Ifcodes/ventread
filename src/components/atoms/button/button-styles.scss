@@ -1,8 +1,18 @@
+.button{
+  @apply py-3 px-4 border border-solid border-transparent outline-none rounded-lg font-medium cursor-pointer hover:border-[#F2994A] focus:outline-4 flex items-center;
+  transition: all 0.3s ease-in-out ;
+
+  svg{
+    @apply mx-1;
+  }
+}
+
 .primary-button {
-  @apply bg-primary py-3 px-4 font-medium border-none outline-none rounded-lg text-text;
+  @extend .button;
+  @apply bg-primary text-white hover:bg-[#F2994A];
 }
 
 .secondary-button{
-  @extend .primary-button;
-  @apply bg-transparent border border-solid border-primary;
+  @extend .button;
+  @apply bg-transparent border border-solid border-primary text-primary hover:text-[#F2994A];
 }

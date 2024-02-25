@@ -5,11 +5,13 @@ import "../App.scss";
 import Button from "../components/atoms/button";
 import LogoIcon from "../components/atoms/vectors/logo-icon";
 import LogoIconWhite from "../components/atoms/vectors/logo-icon-white";
+import { useTheme } from "../hooks/useTheme";
 
 function StyleGuide() {
   const [count, setCount] = useState(0);
   const nextRef = useRef<any>();
   const prevRef = useRef<any>();
+  const { setTheme } = useTheme();
 
   const goToNext = () => {
     if (nextRef) {
@@ -32,11 +34,19 @@ function StyleGuide() {
       <section ref={prevRef} id="hero" className="h-screen w-full">
         <div>
           <h1>Buttons</h1>
-          <Button buttonType="secondary" iconBefore={<LogoIcon />}>
-            Secondary
+          <Button
+            buttonType="secondary"
+            iconBefore={<LogoIcon />}
+            onClick={() => setTheme("dark")}
+          >
+            Dark
           </Button>
-          <Button otherClasses="mt-4" iconBefore={<LogoIconWhite />}>
-            Primary
+          <Button
+            otherClasses="mt-4"
+            iconBefore={<LogoIconWhite />}
+            onClick={() => setTheme("light")}
+          >
+            Light
           </Button>
         </div>
         <div>

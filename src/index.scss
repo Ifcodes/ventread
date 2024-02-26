@@ -1,14 +1,16 @@
+@import '/public/fonts/messina-sans/MessinaSans.css';
+
 @tailwind base;
 @tailwind components;
 
 
 :root, html {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Messina Sans", "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #213547;
+  color: #000000;
   background-color: #ffffff;
 
   font-synthesis: none;
@@ -18,8 +20,8 @@
 }
 
 html.dark{
-  color: #ffffff;
-  background-color: #213547;
+  color: #D9D9D9;
+  background-color: #000000;
 }
 
 
@@ -68,13 +70,13 @@ h1 {
 
 @media (prefers-color-scheme: dark) {
   :root, html {
-    color: #ffffff;
-    background-color: #213547;
+    color: #D9D9D9;
+    background-color: #000000;
   }
 
   html.light{
-    color: #213547;
-  background-color: #ffffff;
+    color: #000000;
+    background-color: #ffffff;
   }
 
   a:hover {

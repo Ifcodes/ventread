@@ -32,7 +32,7 @@
 
 .secondary-button{
   @extend .button;
-  @apply bg-transparent border border-solid border-primary-100 text-primary-100 hover:text-[#F2994A] hover:bg-gray-50 dark:hover:border-spacing-2 dark:hover:bg-transparent;
+  @apply bg-transparent border border-solid border-primary-100 text-primary-100 hover:text-[#F2994A] hover:bg-grey-10 dark:hover:border-spacing-2 dark:hover:bg-transparent;
 }
 
 // .button{

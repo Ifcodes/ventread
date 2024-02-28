@@ -4,19 +4,23 @@
   @apply w-full;
 
   label{
-    @apply font-semibold;
+    @apply font-semibold ml-2;
   }
 
   .input-container{
     @include border-styles;
-    @apply flex dark:bg-transparent bg-grey-10 w-full rounded-xl py-3 items-center mt-1;
+    @apply flex dark:bg-black bg-grey-10 w-full rounded-xl py-3 items-center mt-1;
 
     input{
-      @apply outline-none border-none bg-transparent flex-grow mx-3;
+      @apply outline-none border-none bg-transparent dark:bg-black flex-grow;
     }
 
     &input:focus{
       @apply border-primary-100 transition-colors;
+    }
+
+    svg{
+      @apply mx-2;
     }
   }
 }

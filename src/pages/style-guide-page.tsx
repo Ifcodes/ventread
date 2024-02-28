@@ -7,6 +7,7 @@ import LogoIcon from "../components/atoms/vectors/logo-icon";
 import LogoIconWhite from "../components/atoms/vectors/logo-icon-white";
 import { useTheme } from "../hooks/useTheme";
 import { Input } from "../components/atoms/form/inputs/input/input";
+import { BiSearch } from "react-icons/bi";
 
 function StyleGuide() {
   const [count, setCount] = useState(0);
@@ -54,7 +55,10 @@ function StyleGuide() {
         <div>
           <h1>Inputs</h1>
           <div className="mt-4">
-            <Input label="Hello world" />
+            <Input
+              leftIcon={<BiSearch size={24} color="#575050" />}
+              label="Hello world"
+            />
           </div>
         </div>
         <div>

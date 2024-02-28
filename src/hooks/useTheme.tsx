@@ -1,20 +1,38 @@
 import { useEffect, useState } from "react";
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState<string | null>();
-  console.log({ theme });
+  const [theme, setTheme] = useState<string | null>(null);
+  const defaultIsDark =
+    window.matchMedia("(prefers-color-scheme: dark)").matches || false;
+  const existingTheme = localStorage.getItem("theme");
+
+  const handleChangeTheme = (outTheme: string, inTheme: string) => {
+    document.documentElement.classList.remove(outTheme);
+    document.documentElement.classList.add(inTheme);
+  };
 
   useEffect(() => {
     if (theme === "dark") {
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
+      handleChangeTheme("light", "dark");
       localStorage.setItem("theme", "dark");
     } else if (theme === "light") {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-      localStorage.removeItem("theme");
+      handleChangeTheme("dark", "light");
+      localStorage.setItem("theme", "light");
+    } else if (existingTheme && existingTheme === "dark") {
+      console.log({ existingTheme });
+      handleChangeTheme("light", "dark");
+    } else if (existingTheme && existingTheme === "light") {
+      console.log({ existingTheme });
+      handleChangeTheme("dark", "light");
+    } else if (defaultIsDark) {
+      console.log({ defaultIsDark });
+      handleChangeTheme("light", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      handleChangeTheme("dark", "light");
+      localStorage.setItem("theme", "light");
     }
-  }, [theme]);
+  }, [theme, existingTheme, defaultIsDark]);
 
   return { theme, setTheme };
 };

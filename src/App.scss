@@ -4,7 +4,6 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -14,7 +13,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em rgba(214, 143, 43, 0.5));
+  filter: drop-shadow(0 0 2em #d68f2b80);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);

@@ -2,10 +2,11 @@
 import { useRef, useState } from "react";
 import viteLogo from "/logo.svg";
 import "../App.scss";
-import Button from "../components/atoms/button";
+import Button from "../components/atoms/buttons";
 import LogoIcon from "../components/atoms/vectors/logo-icon";
 import LogoIconWhite from "../components/atoms/vectors/logo-icon-white";
 import { useTheme } from "../hooks/useTheme";
+import { Input } from "../components/atoms/form/inputs/input/input";
 
 function StyleGuide() {
   const [count, setCount] = useState(0);
@@ -32,7 +33,7 @@ function StyleGuide() {
   return (
     <>
       <section ref={prevRef} id="hero" className="h-screen w-full">
-        <div>
+        <div className="my-4">
           <h1>Buttons</h1>
           <Button
             buttonType="secondary"
@@ -48,6 +49,13 @@ function StyleGuide() {
           >
             Light
           </Button>
+        </div>
+        <hr />
+        <div>
+          <h1>Inputs</h1>
+          <div className="mt-4">
+            <Input label="Hello world" />
+          </div>
         </div>
         <div>
           <a href="https://vitejs.dev" target="_blank">

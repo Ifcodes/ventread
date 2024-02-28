@@ -1,18 +1,23 @@
 .button{
-  @apply py-3 px-4 border border-solid border-transparent outline-none rounded-lg font-medium cursor-pointer hover:border-[#F2994A] focus:outline-4 flex items-center relative;
-  transition: 0.5s;
+  @apply py-3 px-4 border border-solid border-transparent outline-none rounded-xl cursor-pointer hover:border-[#F2994A] font-semibold flex items-center relative duration-['0.4s'];
 
   &::after{
-    @apply content-[''] block absolute top-0 left-0 rounded-['4em'] opacity-0 transition-all;
-    box-shadow: 0 0 10px 40px white;
+    @apply block absolute top-0 left-0 rounded-xl opacity-0 w-full h-full;
+    box-shadow: 0 0 10px 40px #fac79a;
+    transition: all 0.6s;
+    content: '';
 
   }
 
   &:active::after{
-    @apply absolute top-0 left-0 opacity-100 rounded-['4em'];
-    box-shadow: 0 0 0 0 white;
+    @apply absolute top-0 left-0 opacity-45 rounded-xl;
+    box-shadow: 0 0 0 0 #fac79a;
     transition: 0s;
 
+  }
+
+  &:active{
+    top: 1px;
   }
 
   svg{
@@ -22,12 +27,12 @@
 
 .primary-button {
   @extend .button;
-  @apply bg-primary text-white hover:bg-[#F2994A];
+  @apply bg-primary-100 text-white hover:bg-[#F2994A];
 }
 
 .secondary-button{
   @extend .button;
-  @apply bg-transparent border border-solid border-primary text-primary hover:text-[#F2994A];
+  @apply bg-transparent border border-solid border-primary-100 text-primary-100 hover:text-[#F2994A] hover:bg-gray-50 dark:hover:border-spacing-2 dark:hover:bg-transparent;
 }
 
 // .button{

@@ -1,0 +1,22 @@
+@import '../../../../../styles/mixins';
+
+.input-wrapper{
+  @apply w-full;
+
+  label{
+    @apply font-semibold;
+  }
+
+  .input-container{
+    @include border-styles;
+    @apply flex dark:bg-transparent bg-grey-10 w-full rounded-xl py-3 items-center mt-1;
+
+    input{
+      @apply outline-none border-none bg-transparent flex-grow mx-3;
+    }
+
+    &input:focus{
+      @apply border-primary-100 transition-colors;
+    }
+  }
+}

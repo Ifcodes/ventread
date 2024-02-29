@@ -19,13 +19,10 @@ export const useTheme = () => {
       handleChangeTheme("dark", "light");
       localStorage.setItem("theme", "light");
     } else if (existingTheme && existingTheme === "dark") {
-      console.log({ existingTheme });
       handleChangeTheme("light", "dark");
     } else if (existingTheme && existingTheme === "light") {
-      console.log({ existingTheme });
       handleChangeTheme("dark", "light");
     } else if (defaultIsDark) {
-      console.log({ defaultIsDark });
       handleChangeTheme("light", "dark");
       localStorage.setItem("theme", "dark");
     } else {

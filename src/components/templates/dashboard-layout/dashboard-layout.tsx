@@ -1,9 +1,18 @@
-import React from 'react'
+import { ReactNode } from "react";
+import TopNav from "../../molecules/navs/top-nav";
+import "./dashboard-layout-styles.scss";
+import { useTheme } from "../../../hooks/useTheme";
 
-const DashboardLayout = () => {
-  return (
-    <div>DashboardLayout</div>
-  )
+interface IDashboardLayoutProps {
+  children: ReactNode;
 }
+export const DashboardLayout = ({ children }: IDashboardLayoutProps) => {
+  const { setTheme } = useTheme();
 
-export default DashboardLayout
+  return (
+    <div className="dashboard-wrapper">
+      <TopNav />
+      <main>{children}</main>
+    </div>
+  );
+};

@@ -1,0 +1,7 @@
+.dashboard-wrapper{
+  @apply w-screen min-h-screen relative left-0 right-0;
+
+  main{
+    @apply mt-6 w-full lg:w-['50%']
+  }
+}

@@ -4,15 +4,15 @@
   @apply w-full;
 
   label{
-    @apply font-semibold ml-2;
+    @apply font-semibold ml-2 mb-1;
   }
 
   .input-container{
     @include border-styles;
-    @apply flex dark:bg-black bg-grey-10 w-full rounded-xl py-3 items-center mt-1;
+    @apply flex dark:bg-black bg-grey-10 w-full rounded-xl py-3 items-center;
 
     input{
-      @apply outline-none border-none bg-transparent dark:bg-black flex-grow;
+      @apply outline-none border-none bg-transparent dark:bg-black flex-grow text-base;
     }
 
     &input:focus{

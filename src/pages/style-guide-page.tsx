@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef, useState } from "react";
 import viteLogo from "/logo.svg";
-import "../App.scss";
 import Button from "../components/atoms/buttons";
 import LogoIcon from "../components/atoms/vectors/logo-icon";
 import LogoIconWhite from "../components/atoms/vectors/logo-icon-white";
 import { useTheme } from "../hooks/useTheme";
-import { Input } from "../components/atoms/form/inputs/input/input";
-import { BiSearch } from "react-icons/bi";
+import SearchInput from "../components/atoms/form/inputs/search-input";
+import { Avatar } from "@mui/material";
 
 function StyleGuide() {
   const [count, setCount] = useState(0);
@@ -31,6 +30,11 @@ function StyleGuide() {
     }
   };
 
+  const handleSystemTheme = () => {
+    localStorage.removeItem("theme");
+    setTheme(null);
+  };
+
   return (
     <>
       <section ref={prevRef} id="hero" className="h-screen w-full">
@@ -38,10 +42,18 @@ function StyleGuide() {
           <h1>Buttons</h1>
           <Button
             buttonType="secondary"
+            otherClasses="my-4"
             iconBefore={<LogoIcon />}
             onClick={() => setTheme("dark")}
           >
             Dark
+          </Button>
+          <Button
+            buttonType="secondary"
+            iconBefore={<LogoIcon />}
+            onClick={() => handleSystemTheme()}
+          >
+            System Theme
           </Button>
           <Button
             otherClasses="mt-4"
@@ -55,11 +67,19 @@ function StyleGuide() {
         <div>
           <h1>Inputs</h1>
           <div className="mt-4">
-            <Input
-              leftIcon={<BiSearch size={24} color="#575050" />}
-              label="Hello world"
-            />
+            <SearchInput />
           </div>
+        </div>
+        <div>
+          <h1>Avatar</h1>
+          <Avatar
+            src={viteLogo}
+            sx={{
+              height: "8rem",
+              width: "8rem",
+              border: "1px solid rgba(0,0,0,0.1)",
+            }}
+          />
         </div>
         <div>
           <a href="https://vitejs.dev" target="_blank">

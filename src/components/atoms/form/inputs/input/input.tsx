@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, ReactNode } from "react";
 import "./input-styles.scss";
 
-interface IInputProps
+export interface IInputProps
   extends DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -20,7 +20,7 @@ export const Input = ({
 }: IInputProps) => {
   return (
     <div className="input-wrapper">
-      <label htmlFor={id}>{label}</label>
+      {label && <label htmlFor={id}>{label}</label>}
       <div className="input-container">
         {leftIcon && leftIcon}
         <input id={id} {...rest} />

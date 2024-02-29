@@ -1,5 +1,5 @@
 .button{
-  @apply py-3 px-4 border border-solid border-transparent outline-none rounded-xl cursor-pointer hover:border-[#F2994A] font-semibold flex items-center relative duration-['0.4s'];
+  @apply py-3 px-4 border border-solid border-transparent outline-none rounded-xl cursor-pointer hover:border-[#F2994A] font-medium flex items-center relative duration-['0.4s'];
 
   &::after{
     @apply block absolute top-0 left-0 rounded-xl opacity-0 w-full h-full;

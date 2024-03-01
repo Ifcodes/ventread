@@ -1,0 +1,38 @@
+@import '../../../../styles/mixins';
+
+
+.dropdownWrapper {
+  position: relative;
+  width: fit-content;
+
+  .icon {
+    cursor: pointer;
+  }
+
+  .dropdownContent {
+    @include border-styles;
+    @apply w-fit absolute right-0 top-full flex flex-col justify-start items-start p-4 rounded-lg bg-transparent z-["1500"];
+
+    transform-origin: top right;
+    transform: scale(0);
+    box-shadow: 3px 5px 20px #d68f2b33;
+    transition: transform 0.2s ease;
+
+    &.showDropDown {
+      transform: scale(1);
+    }
+
+    & > button,
+    & > a,
+    & > div,
+    & > span {
+      margin-bottom: 2.7rem;
+      width: 100%;
+      cursor: pointer;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

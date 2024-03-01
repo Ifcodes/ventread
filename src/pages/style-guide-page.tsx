@@ -7,12 +7,14 @@ import LogoIconWhite from "../components/atoms/vectors/logo-icon-white";
 import { useTheme } from "../hooks/useTheme";
 import SearchInput from "../components/atoms/form/inputs/search-input";
 import { Avatar } from "@mui/material";
+import OptionsDropdown from "../components/molecules/dropdowns/options-dropdown";
 
 function StyleGuide() {
   const [count, setCount] = useState(0);
   const nextRef = useRef<any>();
   const prevRef = useRef<any>();
   const { setTheme } = useTheme();
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const goToNext = () => {
     if (nextRef) {
@@ -69,6 +71,17 @@ function StyleGuide() {
           <div className="mt-4">
             <SearchInput />
           </div>
+        </div>
+        <div>
+          <h1>Dropdown</h1>
+          <OptionsDropdown
+            showDropdown={showDropdown}
+            setShowDropdown={setShowDropdown}
+            icon={<Button iconBefore={<LogoIconWhite />}>Write</Button>}
+          >
+            <span>Write a Guide</span>
+            <span>Write a Blog</span>
+          </OptionsDropdown>
         </div>
         <div>
           <h1>Avatar</h1>

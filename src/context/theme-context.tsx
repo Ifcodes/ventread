@@ -23,7 +23,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     document.documentElement.classList.add(inTheme);
   };
 
-  console.log({ theme });
   useEffect(() => {
     if (theme === "dark") {
       handleChangeTheme("light", "dark");
